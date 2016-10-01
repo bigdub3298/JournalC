@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CFBBF5A51D9F67B30040B086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A41D9F67B30040B086 /* main.m */; };
 		CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A71D9F67B30040B086 /* AppDelegate.m */; };
-		CFBBF5AB1D9F67B30040B086 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5AA1D9F67B30040B086 /* ViewController.m */; };
 		CFBBF5AE1D9F67B30040B086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBBF5AC1D9F67B30040B086 /* Main.storyboard */; };
 		CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */; };
 		CFBBF5B31D9F67B40040B086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CFBBF5B21D9F67B40040B086 /* Assets.xcassets */; };
@@ -40,8 +39,6 @@
 		CFBBF5A41D9F67B30040B086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBBF5A61D9F67B30040B086 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CFBBF5A71D9F67B30040B086 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CFBBF5A91D9F67B30040B086 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CFBBF5AA1D9F67B30040B086 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CFBBF5AD1D9F67B30040B086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CFBBF5B01D9F67B40040B086 /* JournalC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JournalC.xcdatamodel; sourceTree = "<group>"; };
 		CFBBF5B21D9F67B40040B086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,8 +102,6 @@
 			children = (
 				CFBBF5A61D9F67B30040B086 /* AppDelegate.h */,
 				CFBBF5A71D9F67B30040B086 /* AppDelegate.m */,
-				CFBBF5A91D9F67B30040B086 /* ViewController.h */,
-				CFBBF5AA1D9F67B30040B086 /* ViewController.m */,
 				CFBBF5AC1D9F67B30040B086 /* Main.storyboard */,
 				CFBBF5B21D9F67B40040B086 /* Assets.xcassets */,
 				CFBBF5B41D9F67B40040B086 /* LaunchScreen.storyboard */,
@@ -273,7 +268,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBBF5AB1D9F67B30040B086 /* ViewController.m in Sources */,
 				CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */,
 				CFBBF5A51D9F67B30040B086 /* main.m in Sources */,
 				CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */,
