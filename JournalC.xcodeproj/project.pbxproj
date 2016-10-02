@@ -15,6 +15,8 @@
 		CFBBF5B61D9F67B40040B086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBBF5B41D9F67B40040B086 /* LaunchScreen.storyboard */; };
 		CFBBF5C11D9F67B40040B086 /* JournalCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5C01D9F67B40040B086 /* JournalCTests.m */; };
 		CFBBF5CC1D9F67B40040B086 /* JournalCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5CB1D9F67B40040B086 /* JournalCUITests.m */; };
+		CFBBF67A1DA067690040B086 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6791DA067690040B086 /* Entry.m */; };
+		CFBBF67D1DA069380040B086 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF67C1DA069380040B086 /* EntryController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,10 @@
 		CFBBF5C71D9F67B40040B086 /* JournalCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JournalCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBBF5CB1D9F67B40040B086 /* JournalCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JournalCUITests.m; sourceTree = "<group>"; };
 		CFBBF5CD1D9F67B40040B086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFBBF6781DA067690040B086 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		CFBBF6791DA067690040B086 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		CFBBF67B1DA069380040B086 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		CFBBF67C1DA069380040B086 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,10 @@
 				CFBBF5B71D9F67B40040B086 /* Info.plist */,
 				CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */,
 				CFBBF5A31D9F67B30040B086 /* Supporting Files */,
+				CFBBF6781DA067690040B086 /* Entry.h */,
+				CFBBF6791DA067690040B086 /* Entry.m */,
+				CFBBF67B1DA069380040B086 /* EntryController.h */,
+				CFBBF67C1DA069380040B086 /* EntryController.m */,
 			);
 			path = JournalC;
 			sourceTree = "<group>";
@@ -268,6 +278,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFBBF67D1DA069380040B086 /* EntryController.m in Sources */,
+				CFBBF67A1DA067690040B086 /* Entry.m in Sources */,
 				CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */,
 				CFBBF5A51D9F67B30040B086 /* main.m in Sources */,
 				CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */,
@@ -494,6 +506,7 @@
 				CFBBF5D21D9F67B40040B086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFBBF5D31D9F67B40040B086 /* Build configuration list for PBXNativeTarget "JournalCTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +515,7 @@
 				CFBBF5D51D9F67B40040B086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CFBBF5D61D9F67B40040B086 /* Build configuration list for PBXNativeTarget "JournalCUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +524,7 @@
 				CFBBF5D81D9F67B40040B086 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
