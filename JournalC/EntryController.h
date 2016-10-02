@@ -21,7 +21,7 @@
 - (void)createEntry:(NSString *)title body:(NSString *)body;
 
 // Read
-@property (nonatomic) NSArray *posts;
+@property (nonatomic) NSArray *entries;
 
 // Update
     // Dot syntax

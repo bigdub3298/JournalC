@@ -38,7 +38,7 @@
     [self.internalEntries removeObject:entry];
 }
 
-- (NSArray *)posts { return self.internalEntries; }
+- (NSArray *)entries { return self.internalEntries; }
 
 
 @end
