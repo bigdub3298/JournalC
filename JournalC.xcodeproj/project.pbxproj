@@ -108,16 +108,9 @@
 			children = (
 				CFBBF5A61D9F67B30040B086 /* AppDelegate.h */,
 				CFBBF5A71D9F67B30040B086 /* AppDelegate.m */,
-				CFBBF5AC1D9F67B30040B086 /* Main.storyboard */,
-				CFBBF5B21D9F67B40040B086 /* Assets.xcassets */,
-				CFBBF5B41D9F67B40040B086 /* LaunchScreen.storyboard */,
-				CFBBF5B71D9F67B40040B086 /* Info.plist */,
-				CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */,
+				CFBBF67E1DA0A64F0040B086 /* Model Objects */,
+				CFBBF67F1DA0A66A0040B086 /* Core */,
 				CFBBF5A31D9F67B30040B086 /* Supporting Files */,
-				CFBBF6781DA067690040B086 /* Entry.h */,
-				CFBBF6791DA067690040B086 /* Entry.m */,
-				CFBBF67B1DA069380040B086 /* EntryController.h */,
-				CFBBF67C1DA069380040B086 /* EntryController.m */,
 			);
 			path = JournalC;
 			sourceTree = "<group>";
@@ -146,6 +139,29 @@
 				CFBBF5CD1D9F67B40040B086 /* Info.plist */,
 			);
 			path = JournalCUITests;
+			sourceTree = "<group>";
+		};
+		CFBBF67E1DA0A64F0040B086 /* Model Objects */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBF6781DA067690040B086 /* Entry.h */,
+				CFBBF6791DA067690040B086 /* Entry.m */,
+				CFBBF67B1DA069380040B086 /* EntryController.h */,
+				CFBBF67C1DA069380040B086 /* EntryController.m */,
+				CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */,
+			);
+			name = "Model Objects";
+			sourceTree = "<group>";
+		};
+		CFBBF67F1DA0A66A0040B086 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBF5AC1D9F67B30040B086 /* Main.storyboard */,
+				CFBBF5B41D9F67B40040B086 /* LaunchScreen.storyboard */,
+				CFBBF5B21D9F67B40040B086 /* Assets.xcassets */,
+				CFBBF5B71D9F67B40040B086 /* Info.plist */,
+			);
+			name = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
