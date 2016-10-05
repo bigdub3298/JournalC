@@ -7,6 +7,7 @@
 //
 
 #import "EntryListTableViewController.h"
+#import "EntryDetailViewController.h"
 #import "EntryController.h"
 #import "Entry.h"
 
@@ -72,7 +73,31 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Entry *selectedEntry = [[EntryController sharedController] entries][indexPath.row];
         entryDetailViewController.entry = selectedEntry; 
+    } else if ([segue.identifier isEqualToString:@"toAddEntry"]) {
+        
     }
+}
+
+- (IBAction)unwindToEntryList:(UIStoryboardSegue *)sender
+{
+    EntryDetailViewController *sourceViewController = [sender sourceViewController];
+    Entry *entry = sourceViewController.entry;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    
+    if (indexPath != nil && entry != nil) {
+        NSMutableArray *entries = [[EntryController sharedController] entries];
+        entries[indexPath.row] = entry;
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+    } else {
+        NSArray *entries = [[EntryController sharedController] entries];
+        
+        NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow: entries.count inSection:0];
+        [[EntryController sharedController] addEntry:entry];
+        [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation: UITableViewRowAnimationBottom];
+    }
+    
 }
 
 

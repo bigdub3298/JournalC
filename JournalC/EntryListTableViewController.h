@@ -10,4 +10,5 @@
 
 @interface EntryListTableViewController : UITableViewController
 
+- (void)unwindToEntryList:(UIStoryboardSegue *) sender; 
 @end

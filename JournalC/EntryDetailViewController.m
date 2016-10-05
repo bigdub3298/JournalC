@@ -11,8 +11,10 @@
 
 @interface EntryDetailViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton; 
+
 @end
 
 @implementation EntryDetailViewController
@@ -27,21 +29,37 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+// MARK: - Navigation
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if (self.saveButton == sender) {
+        NSString *title = self.titleTextField.text;
+        NSString *body = self.bodyTextView.text;
+        NSDate *timestamp = [NSDate date];
+        
+        self.entry = [[Entry alloc]initWithTitle:title body:body timestamp:timestamp];
+    }
 }
-*/
+
+// MARK: - Actions
+
+- (IBAction)cancelButtonTapped:(UIBarButtonItem *)sender {
+    UINavigationController *isPresentingInAddEntryMode = (UINavigationController *) [self presentingViewController];
+    
+    if (isPresentingInAddEntryMode) {
+        [self dismissViewControllerAnimated:true completion:nil];
+    } else {
+        [[self navigationController] popViewControllerAnimated:true];
+    }
+}
+
 
 // MARK: - Helper Functions
 
 - (void)updateWithEntry:(Entry *)entry
 {
-    self.titleLabel.text = entry.title;
+    self.titleTextField.text = entry.title;
     self.navigationItem.title = entry.title;
     self.bodyTextView.text = entry.body;
     

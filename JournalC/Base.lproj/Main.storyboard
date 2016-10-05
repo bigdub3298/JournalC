@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pMe-Hi-7Kr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -9,7 +9,7 @@
         <!--Entries-->
         <scene sceneID="zsb-bh-flA">
             <objects>
-                <tableViewController id="EIJ-NZ-726" sceneMemberID="viewController">
+                <tableViewController id="EIJ-NZ-726" customClass="EntryListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jgc-ij-4w9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                             <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3cD-dH-9tT">
@@ -63,7 +63,7 @@
         <!--Title-->
         <scene sceneID="Hr1-4I-3a9">
             <objects>
-                <viewController id="SXo-U7-OVZ" sceneMemberID="viewController">
+                <viewController id="SXo-U7-OVZ" customClass="EntryDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4X0-DK-nmP"/>
                         <viewControllerLayoutGuide type="bottom" id="lYk-N9-4IK"/>
@@ -80,8 +80,14 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x88-Nz-h0D">
+                                        <rect key="frame" x="0.0" y="50" width="560" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Np3-kw-0k8">
-                                        <rect key="frame" x="0.0" y="50" width="560" height="486"/>
+                                        <rect key="frame" x="0.0" y="90.5" width="560" height="445.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -98,11 +104,25 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="IC6-9d-cxI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7e8-fq-OMn"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uFv-4d-V72"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="7e8-fq-OMn">
+                            <connections>
+                                <action selector="cancelButtonTapped:" destination="SXo-U7-OVZ" id="htp-Up-CVa"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uFv-4d-V72">
+                            <connections>
+                                <segue destination="GLw-wa-cLI" kind="unwind" unwindAction="unwindToEntryList:" id="2Yr-jj-Rm9"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="Np3-kw-0k8" id="W30-1y-K84"/>
+                        <outlet property="saveButton" destination="uFv-4d-V72" id="AIy-UR-PrP"/>
+                        <outlet property="titleTextField" destination="HZm-pQ-QQM" id="kRS-ZK-c7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m2m-WW-fnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GLw-wa-cLI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2945" y="322"/>
         </scene>
@@ -122,7 +142,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDJ-vO-pxm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1400" y="322"/>
+            <point key="canvasLocation" x="2212" y="-396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kPT-o2-PQg">

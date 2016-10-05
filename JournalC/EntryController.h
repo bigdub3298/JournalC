@@ -17,14 +17,13 @@
 
 
 // Create
-
-- (void)createEntry:(NSString *)title body:(NSString *)body;
+- (void)addEntry:(Entry *)entry;
 
 // Read
-@property (nonatomic) NSArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
 
 // Update
-    // Dot syntax
+    // dot syntax 
 
 // Delete
 - (void)deleteEntry:(Entry *)entry;

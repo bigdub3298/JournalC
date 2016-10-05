@@ -26,11 +26,18 @@
     return sharedController;
 }
 
-- (void)createEntry:(NSString *)title body:(NSString *)body
-{
-    Entry *newEntry = [[Entry alloc]initWithTitle:title body:body];
+- (instancetype)init {
+    self = [super init];
     
-    [self.internalEntries addObject:newEntry];
+    if (self) {
+        _internalEntries = [NSMutableArray array];
+    }
+    
+    return self;
+}
+- (void)addEntry:(Entry *)entry
+{
+    [self.internalEntries addObject:entry];
 }
 
 -(void)deleteEntry:(Entry *)entry
@@ -38,7 +45,10 @@
     [self.internalEntries removeObject:entry];
 }
 
-- (NSArray *)entries { return self.internalEntries; }
+- (NSArray *)entries
+{
+    return self.internalEntries; 
+}
 
 
 @end

@@ -11,13 +11,13 @@
 @implementation Entry
 
 
-- (instancetype)initWithTitle:(NSString *)title body:(NSString *)body
+- (instancetype)initWithTitle:(NSString *)title body:(NSString *)body timestamp:(NSDate *)timestamp
 {
     self = [super init];
     if(self) {
         _title = title;
         _body = body;
-        _timestamp = [NSDate date];
+        _timestamp = timestamp;
     }
     return self;
 }
