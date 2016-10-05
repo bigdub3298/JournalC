@@ -17,6 +17,8 @@
 		CFBBF5CC1D9F67B40040B086 /* JournalCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5CB1D9F67B40040B086 /* JournalCUITests.m */; };
 		CFBBF67A1DA067690040B086 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6791DA067690040B086 /* Entry.m */; };
 		CFBBF67D1DA069380040B086 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF67C1DA069380040B086 /* EntryController.m */; };
+		CFBBF6821DA0A9C40040B086 /* EntryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */; };
+		CFBBF6851DA0ADE60040B086 /* EntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6841DA0ADE60040B086 /* EntryDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		CFBBF6791DA067690040B086 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
 		CFBBF67B1DA069380040B086 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
 		CFBBF67C1DA069380040B086 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
+		CFBBF6801DA0A9C40040B086 /* EntryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryListTableViewController.h; sourceTree = "<group>"; };
+		CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryListTableViewController.m; sourceTree = "<group>"; };
+		CFBBF6831DA0ADE60040B086 /* EntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryDetailViewController.h; sourceTree = "<group>"; };
+		CFBBF6841DA0ADE60040B086 /* EntryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,8 @@
 			children = (
 				CFBBF5A61D9F67B30040B086 /* AppDelegate.h */,
 				CFBBF5A71D9F67B30040B086 /* AppDelegate.m */,
+				CFBBF6861DA0AECD0040B086 /* View Controllers */,
+				CFBBF6871DA0AEE40040B086 /* Model Controller */,
 				CFBBF67E1DA0A64F0040B086 /* Model Objects */,
 				CFBBF67F1DA0A66A0040B086 /* Core */,
 				CFBBF5A31D9F67B30040B086 /* Supporting Files */,
@@ -146,8 +154,6 @@
 			children = (
 				CFBBF6781DA067690040B086 /* Entry.h */,
 				CFBBF6791DA067690040B086 /* Entry.m */,
-				CFBBF67B1DA069380040B086 /* EntryController.h */,
-				CFBBF67C1DA069380040B086 /* EntryController.m */,
 				CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */,
 			);
 			name = "Model Objects";
@@ -162,6 +168,26 @@
 				CFBBF5B71D9F67B40040B086 /* Info.plist */,
 			);
 			name = Core;
+			sourceTree = "<group>";
+		};
+		CFBBF6861DA0AECD0040B086 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBF6801DA0A9C40040B086 /* EntryListTableViewController.h */,
+				CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */,
+				CFBBF6831DA0ADE60040B086 /* EntryDetailViewController.h */,
+				CFBBF6841DA0ADE60040B086 /* EntryDetailViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CFBBF6871DA0AEE40040B086 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFBBF67B1DA069380040B086 /* EntryController.h */,
+				CFBBF67C1DA069380040B086 /* EntryController.m */,
+			);
+			name = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +324,8 @@
 				CFBBF67A1DA067690040B086 /* Entry.m in Sources */,
 				CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */,
 				CFBBF5A51D9F67B30040B086 /* main.m in Sources */,
+				CFBBF6821DA0A9C40040B086 /* EntryListTableViewController.m in Sources */,
+				CFBBF6851DA0ADE60040B086 /* EntryDetailViewController.m in Sources */,
 				CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
