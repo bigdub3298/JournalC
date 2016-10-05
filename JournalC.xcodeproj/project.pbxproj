@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CFA27EE11DA5AF2800E4B8B1 /* Journal.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA27EE01DA5AF2800E4B8B1 /* Journal.m */; };
+		CFA27EE41DA5B19E00E4B8B1 /* JournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA27EE31DA5B19E00E4B8B1 /* JournalController.m */; };
 		CFBBF5A51D9F67B30040B086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A41D9F67B30040B086 /* main.m */; };
 		CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A71D9F67B30040B086 /* AppDelegate.m */; };
 		CFBBF5AE1D9F67B30040B086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBBF5AC1D9F67B30040B086 /* Main.storyboard */; };
@@ -16,7 +18,6 @@
 		CFBBF5C11D9F67B40040B086 /* JournalCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5C01D9F67B40040B086 /* JournalCTests.m */; };
 		CFBBF5CC1D9F67B40040B086 /* JournalCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5CB1D9F67B40040B086 /* JournalCUITests.m */; };
 		CFBBF67A1DA067690040B086 /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6791DA067690040B086 /* Entry.m */; };
-		CFBBF67D1DA069380040B086 /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF67C1DA069380040B086 /* EntryController.m */; };
 		CFBBF6821DA0A9C40040B086 /* EntryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */; };
 		CFBBF6851DA0ADE60040B086 /* EntryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF6841DA0ADE60040B086 /* EntryDetailViewController.m */; };
 /* End PBXBuildFile section */
@@ -39,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CFA27EDF1DA5AF2800E4B8B1 /* Journal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Journal.h; sourceTree = "<group>"; };
+		CFA27EE01DA5AF2800E4B8B1 /* Journal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Journal.m; sourceTree = "<group>"; };
+		CFA27EE21DA5B19E00E4B8B1 /* JournalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalController.h; sourceTree = "<group>"; };
+		CFA27EE31DA5B19E00E4B8B1 /* JournalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalController.m; sourceTree = "<group>"; };
 		CFBBF5A01D9F67B30040B086 /* JournalC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBBF5A41D9F67B30040B086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBBF5A61D9F67B30040B086 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,8 +61,6 @@
 		CFBBF5CD1D9F67B40040B086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CFBBF6781DA067690040B086 /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
 		CFBBF6791DA067690040B086 /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
-		CFBBF67B1DA069380040B086 /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
-		CFBBF67C1DA069380040B086 /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 		CFBBF6801DA0A9C40040B086 /* EntryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryListTableViewController.h; sourceTree = "<group>"; };
 		CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryListTableViewController.m; sourceTree = "<group>"; };
 		CFBBF6831DA0ADE60040B086 /* EntryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryDetailViewController.h; sourceTree = "<group>"; };
@@ -152,6 +155,8 @@
 		CFBBF67E1DA0A64F0040B086 /* Model Objects */ = {
 			isa = PBXGroup;
 			children = (
+				CFA27EDF1DA5AF2800E4B8B1 /* Journal.h */,
+				CFA27EE01DA5AF2800E4B8B1 /* Journal.m */,
 				CFBBF6781DA067690040B086 /* Entry.h */,
 				CFBBF6791DA067690040B086 /* Entry.m */,
 				CFBBF5AF1D9F67B40040B086 /* JournalC.xcdatamodeld */,
@@ -184,8 +189,8 @@
 		CFBBF6871DA0AEE40040B086 /* Model Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CFBBF67B1DA069380040B086 /* EntryController.h */,
-				CFBBF67C1DA069380040B086 /* EntryController.m */,
+				CFA27EE21DA5B19E00E4B8B1 /* JournalController.h */,
+				CFA27EE31DA5B19E00E4B8B1 /* JournalController.m */,
 			);
 			name = "Model Controller";
 			sourceTree = "<group>";
@@ -320,13 +325,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFBBF67D1DA069380040B086 /* EntryController.m in Sources */,
 				CFBBF67A1DA067690040B086 /* Entry.m in Sources */,
 				CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */,
 				CFBBF5A51D9F67B30040B086 /* main.m in Sources */,
 				CFBBF6821DA0A9C40040B086 /* EntryListTableViewController.m in Sources */,
 				CFBBF6851DA0ADE60040B086 /* EntryDetailViewController.m in Sources */,
 				CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */,
+				CFA27EE41DA5B19E00E4B8B1 /* JournalController.m in Sources */,
+				CFA27EE11DA5AF2800E4B8B1 /* Journal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
