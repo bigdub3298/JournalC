@@ -13,8 +13,9 @@
 @interface Journal : NSObject
 
 @property (nonatomic, copy) NSString *title;
-@property (nonatomic, strong) NSArray *entries;
+@property (nonatomic, strong) NSMutableArray *entries;
+@property (nonatomic, strong) NSDate *timestamp;
 
-- (instancetype)initWithTitle:(NSString *)title entries:(NSArray *)entries;
+- (instancetype)initWithTitle:(NSString *)title entries:(NSArray *)entries timestamp:(NSDate *)timestamp;
 
 @end

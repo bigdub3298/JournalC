@@ -10,25 +10,20 @@
 
 @interface Journal ()
 
-@property (nonatomic, strong) NSMutableArray *internalEntries;
-
 @end
 
 @implementation Journal
 
-- (instancetype)initWithTitle:(NSString *)title entries:(NSArray *)entries
+- (instancetype)initWithTitle:(NSString *)title entries:(NSArray *)entries timestamp:(NSDate *) timestamp
 {
     self = [super init];
     if (self) {
         _title = [title copy];
-        _internalEntries = [entries mutableCopy];
+        _entries = [entries mutableCopy];
+        _timestamp = timestamp;
     }
     return self;
 }
 
-- (NSArray *)entries
-{
-    return self.internalEntries; 
-}
 
 @end

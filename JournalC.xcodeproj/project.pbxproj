@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CFA27EE11DA5AF2800E4B8B1 /* Journal.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA27EE01DA5AF2800E4B8B1 /* Journal.m */; };
 		CFA27EE41DA5B19E00E4B8B1 /* JournalController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA27EE31DA5B19E00E4B8B1 /* JournalController.m */; };
+		CFA27EE71DA634B500E4B8B1 /* JournalListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFA27EE61DA634B500E4B8B1 /* JournalListTableViewController.m */; };
 		CFBBF5A51D9F67B30040B086 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A41D9F67B30040B086 /* main.m */; };
 		CFBBF5A81D9F67B30040B086 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CFBBF5A71D9F67B30040B086 /* AppDelegate.m */; };
 		CFBBF5AE1D9F67B30040B086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFBBF5AC1D9F67B30040B086 /* Main.storyboard */; };
@@ -44,6 +45,8 @@
 		CFA27EE01DA5AF2800E4B8B1 /* Journal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Journal.m; sourceTree = "<group>"; };
 		CFA27EE21DA5B19E00E4B8B1 /* JournalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalController.h; sourceTree = "<group>"; };
 		CFA27EE31DA5B19E00E4B8B1 /* JournalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalController.m; sourceTree = "<group>"; };
+		CFA27EE51DA634B500E4B8B1 /* JournalListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JournalListTableViewController.h; sourceTree = "<group>"; };
+		CFA27EE61DA634B500E4B8B1 /* JournalListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JournalListTableViewController.m; sourceTree = "<group>"; };
 		CFBBF5A01D9F67B30040B086 /* JournalC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JournalC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFBBF5A41D9F67B30040B086 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CFBBF5A61D9F67B30040B086 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				CFBBF6811DA0A9C40040B086 /* EntryListTableViewController.m */,
 				CFBBF6831DA0ADE60040B086 /* EntryDetailViewController.h */,
 				CFBBF6841DA0ADE60040B086 /* EntryDetailViewController.m */,
+				CFA27EE51DA634B500E4B8B1 /* JournalListTableViewController.h */,
+				CFA27EE61DA634B500E4B8B1 /* JournalListTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -333,6 +338,7 @@
 				CFBBF5B11D9F67B40040B086 /* JournalC.xcdatamodeld in Sources */,
 				CFA27EE41DA5B19E00E4B8B1 /* JournalController.m in Sources */,
 				CFA27EE11DA5AF2800E4B8B1 /* Journal.m in Sources */,
+				CFA27EE71DA634B500E4B8B1 /* JournalListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
