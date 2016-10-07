@@ -8,8 +8,8 @@
 
 #import "EntryListTableViewController.h"
 #import "EntryDetailViewController.h"
-#import "EntryController.h"
 #import "Entry.h"
+#import "Journal.h"
 
 @interface EntryListTableViewController ()
 
@@ -31,14 +31,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 \
-    return [[[EntryController sharedController] entries] count];
+    return [[self.journal entries] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell" forIndexPath:indexPath];
     
-    Entry *entry = [[EntryController sharedController] entries][indexPath.row];
+    Entry *entry = [self.journal entries][indexPath.row];
     
     cell.textLabel.text = entry.title;
     
@@ -54,9 +54,10 @@
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        Entry *selectedEntry = [[EntryController sharedController] entries][indexPath.row];
+        NSMutableArray *entries = [self.journal entries];
         
-        [[EntryController sharedController] deleteEntry:selectedEntry];
+        Entry *selectedEntry = entries[indexPath.row];
+        [entries removeObject:selectedEntry];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -71,7 +72,7 @@
         EntryDetailViewController *entryDetailViewController = [segue destinationViewController];
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Entry *selectedEntry = [[EntryController sharedController] entries][indexPath.row];
+        Entry *selectedEntry = [self.journal entries][indexPath.row];
         entryDetailViewController.entry = selectedEntry; 
     } else if ([segue.identifier isEqualToString:@"toAddEntry"]) {
         
@@ -86,15 +87,15 @@
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
     if (indexPath != nil && entry != nil) {
-        NSMutableArray *entries = [[EntryController sharedController] entries];
+        NSMutableArray *entries = [self.journal entries];
         entries[indexPath.row] = entry;
         
         [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     } else {
-        NSArray *entries = [[EntryController sharedController] entries];
+        NSMutableArray *entries = [self.journal entries];
         
         NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow: entries.count inSection:0];
-        [[EntryController sharedController] addEntry:entry];
+        [entries addObject:entry];
         [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation: UITableViewRowAnimationBottom];
     }
     

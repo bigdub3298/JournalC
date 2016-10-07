@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class Journal; 
+
 @interface EntryListTableViewController : UITableViewController
+
+@property (nonatomic, strong) Journal *journal;
 
 - (void)unwindToEntryList:(UIStoryboardSegue *) sender; 
 @end
