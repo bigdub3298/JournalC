@@ -12,7 +12,9 @@
 #import "EntryListTableViewController.h"
 
 @interface JournalListTableViewController ()
-
+@property (nonatomic, strong) NSString *previousTitle;
+@property (nonatomic, strong) UIAlertAction *addSaveAction;
+@property (nonatomic, strong) UIAlertAction *editSaveAction;
 @end
 
 @implementation JournalListTableViewController
@@ -73,11 +75,13 @@
     if (self.tableView.editing) {
         
         Journal *selectedJournal = [[JournalController sharedController] journals][indexPath.row];
+        self.previousTitle = selectedJournal.title;
         
-        UIAlertController *editJournalAlert = [UIAlertController alertControllerWithTitle:@"Add Journal" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *editJournalAlert = [UIAlertController alertControllerWithTitle:@"Edit Journal Title" message:nil preferredStyle:UIAlertControllerStyleAlert];
         
         [editJournalAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.text = selectedJournal.title;
+            textField.delegate = self;
         }];
         
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
@@ -96,6 +100,8 @@
         
         [editJournalAlert addAction:cancelAction];
         [editJournalAlert addAction:saveAction];
+        
+        self.editSaveAction = editJournalAlert.actions[1];
         
         [self presentViewController:editJournalAlert animated:YES completion:nil];
     }
@@ -125,13 +131,35 @@
     }
 }
 
+// MARK: - Text field delegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.editSaveAction.enabled = NO;
+    self.addSaveAction.enabled = NO;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    if(textField.text != self.previousTitle) {
+        self.editSaveAction.enabled = YES;
+    }
+    self.addSaveAction.enabled = YES; 
+}
+
 // MARK: - Actions
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender {
     UIAlertController *newJournalAlert = [UIAlertController alertControllerWithTitle:@"Add Journal" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
     [newJournalAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-      
+        textField.delegate = self;
     }];
     
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
@@ -149,6 +177,8 @@
     
     [newJournalAlert addAction:cancelAction];
     [newJournalAlert addAction:saveAction];
+    
+    self.addSaveAction = newJournalAlert.actions[1];
     
     [self presentViewController:newJournalAlert animated:YES completion:nil]; 
 }

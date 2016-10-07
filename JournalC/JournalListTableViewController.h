@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JournalListTableViewController : UITableViewController
+@interface JournalListTableViewController : UITableViewController <UITextFieldDelegate>
 
 @end
