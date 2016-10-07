@@ -20,7 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
+    self.tableView.allowsSelectionDuringEditing = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,20 +68,38 @@
     }   
 }
 
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView.editing) {
+        
+        Journal *selectedJournal = [[JournalController sharedController] journals][indexPath.row];
+        
+        UIAlertController *editJournalAlert = [UIAlertController alertControllerWithTitle:@"Add Journal" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        
+        [editJournalAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.text = selectedJournal.title;
+        }];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+        
+        UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UITextField *textField = [editJournalAlert textFields][0];
+            
+            if (textField.text != selectedJournal.title) {
+            
+                selectedJournal.title = textField.text;
+                
+                [[JournalController sharedController] journals][indexPath.row] = selectedJournal;
+                [self.tableView reloadData];
+            }
+        }];
+        
+        [editJournalAlert addAction:cancelAction];
+        [editJournalAlert addAction:saveAction];
+        
+        [self presentViewController:editJournalAlert animated:YES completion:nil];
+    }
 }
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 // MARK: - Navigation
@@ -93,6 +113,15 @@
         Journal *selectedJournal = [[JournalController sharedController] journals][indexPath.row];
         
         entryListTableViewController.journal = selectedJournal;
+    }
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+{
+    if ([identifier isEqualToString:@"toEntryListView"] && self.tableView.editing) {
+        return NO;
+    } else {
+        return YES;
     }
 }
 
