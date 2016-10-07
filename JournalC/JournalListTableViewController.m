@@ -20,11 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,15 +51,7 @@
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
+// MARK: - Table view delegate
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -110,5 +98,30 @@
 
 // MARK: - Actions
 
+- (IBAction)addButtonTapped:(UIBarButtonItem *)sender {
+    UIAlertController *newJournalAlert = [UIAlertController alertControllerWithTitle:@"Add Journal" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [newJournalAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+      
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *saveAction = [UIAlertAction actionWithTitle:@"Save" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *textField = [newJournalAlert textFields][0];
+        
+        NSString *journalTitle = textField.text;
+        
+        Journal *newJournal = [[Journal alloc] initWithTitle:journalTitle entries:@[] timestamp:[NSDate date]];
+        
+        [[JournalController sharedController] addJournal:newJournal];
+        [self.tableView reloadData];
+    }];
+    
+    [newJournalAlert addAction:cancelAction];
+    [newJournalAlert addAction:saveAction];
+    
+    [self presentViewController:newJournalAlert animated:YES completion:nil]; 
+}
 
 @end

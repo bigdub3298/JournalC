@@ -21,6 +21,15 @@
     return sharedController; 
 }
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _journals = [NSMutableArray new]; 
+    }
+    return self;
+}
+
 - (void)addJournal:(Journal *)journal
 {
     [self.journals addObject:journal];
